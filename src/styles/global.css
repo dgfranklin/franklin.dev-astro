@@ -1,1 +1,13 @@
 
+a {
+    @apply text-orange-500 hover:underline
+}
+
+h2 {
+    @apply text-4xl; 
+}
+
+p,ul {
+    @apply mt-0;
+    @apply mb-4;
+}

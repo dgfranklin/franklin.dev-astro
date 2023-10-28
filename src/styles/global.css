@@ -1,13 +1,25 @@
 
-a {
-    @apply text-orange-500 hover:underline
+a, a {
+    @apply text-indigo-600
+}
+
+* {
+    @apply text-slate-950;
 }
 
 h2 {
     @apply text-4xl; 
 }
 
+body {
+    @apply bg-slate-50;
+}
+
 p,ul {
     @apply mt-0;
     @apply mb-4;
+}
+
+li:not(:last-child) {
+    @apply pb-4;
 }

@@ -1,8 +1,9 @@
 ---
-import HeaderLink from './HeaderLink.astro';
+import SocialLinks from './SocialLinks.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<h2 class="p-4 text-center	md:text-start">{SITE_TITLE}</h2>
+<header class="flex justify-center md:justify-between">
+	<h2 class="p-4">{SITE_TITLE}</h2>
+	<span class="hidden md:inline"><SocialLinks/></span>
 </header>

@@ -1,4 +1,7 @@
-# Astro Starter Kit: Blog
+# Franklin.Dev
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8350bcc2-4bf4-4ec7-b68c-a17a63a07110/deploy-status)](https://app.netlify.com/sites/franklin-dev-astro/deploys)
+
 
 ## 🚀 Project Structure
 

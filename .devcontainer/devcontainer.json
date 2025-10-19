@@ -20,12 +20,9 @@
     }
   },
   "forwardPorts": [4321],
-  "postCreateCommand": "yarn install && yarn run build",
+  "postCreateCommand": "pnpm install && pnpm build",
   "postStartCommand": "sudo /usr/local/bin/init-firewall.sh",
   "waitFor": "postStartCommand",
-  "postAttachCommand": {
-    "Server": "yarn start --host"
-  },
   "customizations": {
     "codespaces": {
       "openFiles": ["src/pages/index.astro"]

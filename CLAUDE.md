@@ -4,31 +4,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is David Franklin's personal website built with Astro 4.x. It's a static site featuring a landing page and blog with Markdown/MDX content management.
+This is David Franklin's personal website built with Astro 5.x. It's a static site featuring a landing page and blog with Markdown/MDX content management.
 
 **Tech Stack:**
-- Astro 4.x with MDX and Tailwind CSS
+- Astro 5.x with MDX and Tailwind CSS
 - TypeScript with strict null checks
 - Content Collections for type-safe blog posts
-- Yarn 4.x as package manager
+- pnpm 9.x as package manager
 - Deployed to Netlify
 
 ## Development Commands
 
 ```bash
 # Install dependencies
-yarn install
+pnpm install
 
 # Start dev server (http://localhost:4321)
-yarn dev
+pnpm dev
 # or
-yarn start
+pnpm start
 
 # Build for production
-yarn build
+pnpm build
 
 # Preview production build
-yarn preview
+pnpm preview
 ```
 
 ## Content Architecture
@@ -84,7 +84,7 @@ Uses Tailwind CSS configured via `tailwind.config.mjs`. Global styles live in `s
 This project includes a secure devcontainer configuration for VS Code with Claude Code integration. The devcontainer includes:
 - Network firewall restricting outbound connections to trusted services
 - Pre-installed Claude Code CLI
-- Node 20 environment with Yarn
+- Node 20 environment with pnpm
 - Enhanced developer tools (zsh, fzf, git-delta, GitHub CLI)
 
 To use the devcontainer:

@@ -76,8 +76,8 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
   -a "export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
   -x
 
-# Install latest yarn and Claude Code
-RUN npm install -g yarn @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
+# Install pnpm and Claude Code
+RUN npm install -g pnpm @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
 
 # Copy and set up firewall script
 COPY init-firewall.sh /usr/local/bin/

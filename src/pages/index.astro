@@ -6,6 +6,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import { Image } from 'astro:assets';
 import profile from '../assets/profile.jpg';
+
+// Import bio markdown file - Astro handles markdown natively
+import { Content as BioContent } from '../content/bio.md';
 ---
 
 <!doctype html>
@@ -18,22 +21,8 @@ import profile from '../assets/profile.jpg';
 		<main class="">
 			<div class="md:flex flex-row gap-4 mx-4">
 				<Image class="rounded-full mb-4 md:mb-0 mx-auto md:rounded-lg h-32 w-32 md:h-64 md:w-64" src={profile} alt="Headshot of David Franklin"/>
-				<section class="">
-						<p>I’m a software engineer based out of Seattle working at Databricks on <a href="https://www.databricks.com/blog/announcing-lakeflow-designer-no-code-etl/">LakeFlow Designer</a>.</p>
-							
-						<p>I graduated in 2015 with a Bachelor’s Degree in Computer Science from <a href="http://www.cmu.edu">Carnegie Mellon University</a> in Pittsburgh.</p>
-
-						<p>Previously, I’ve worked on:</p>
-						<ul class="list-disc list-inside">
-							<li><a href="https://www.appsheet.com/">AppSheet</a></li>
-							<li><a href="https://www.databricks.com">Databricks notebooks</a></li>
-							<li><a href="https://domains.google.com/registrar">Google Domains</a></li>
-							<li><a href="https://support.google.com/ci-ses/answer/7253843?hl=en&amp;ref_topic=7253644">Google’s Feed Management tools</a></li>
-							<li><a href="https://www.apple.com/numbers/">Apple’s Numbers, a part of iWork</a></li>
-							<li><a href="https://www.facebook.com/ssamobile">SSA Mobile for iOS and Android</a></li>
-						</ul>
-
-						<p>See my <a href="https://notes.franklin.dev">Notes</a> page for some of my less-organized thoughts and writings.</p>
+				<section class="bio-content">
+					<BioContent />
 				</section>
 			</div>
 		</main>
@@ -42,6 +31,10 @@ import profile from '../assets/profile.jpg';
 	<style>
 	  .picture {
 		background-color: red;
+	  }
+
+	  .bio-content :global(ul) {
+		@apply list-disc list-inside;
 	  }
 	</style>
 </html>

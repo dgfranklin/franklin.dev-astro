@@ -12,6 +12,9 @@ dist/
 !.yarn/sdks
 !.yarn/versions
 
+# pnpm
+.pnpm-store/
+
 # dependencies
 node_modules/
 

@@ -10,12 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "3.1.9",
-    "@astrojs/rss": "4.0.9",
-    "@astrojs/sitemap": "3.2.1",
-    "@astrojs/tailwind": "5.1.2",
-    "astro": "4.16.15",
+    "@astrojs/mdx": "^4.3.7",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.14.6",
     "tailwindcss": "^3.4.15"
   },
-  "packageManager": "yarn@4.5.3"
+  "packageManager": "yarn@4.5.3",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
 }

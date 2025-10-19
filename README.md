@@ -2,31 +2,45 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8350bcc2-4bf4-4ec7-b68c-a17a63a07110/deploy-status)](https://app.netlify.com/sites/franklin-dev-astro/deploys)
 
+David Franklin's personal website built with Astro 5.x. A modern static site featuring a landing page and blog with type-safe content management.
+
+## 🛠️ Tech Stack
+
+- **Framework**: Astro 5.x
+- **Styling**: Tailwind CSS
+- **Content**: MDX with Content Collections
+- **Language**: TypeScript with strict null checks
+- **Package Manager**: pnpm 9.x
+- **Deployment**: Netlify
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
 ```text
-├── public/
+├── public/              # Static assets (images, favicon, etc.)
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+│   ├── components/      # Reusable Astro components
+│   ├── content/
+│   │   ├── blog/       # Blog posts (Markdown/MDX)
+│   │   ├── bio.md      # Bio content
+│   │   └── config.ts   # Content collection schemas
+│   ├── layouts/        # Page layouts
+│   ├── pages/          # File-based routes
+│   ├── styles/         # Global styles
+│   └── consts.ts       # Site-wide constants
+├── astro.config.mjs    # Astro configuration
+├── tailwind.config.mjs # Tailwind configuration
+├── CLAUDE.md           # Claude Code project guidance
+└── tsconfig.json       # TypeScript configuration
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Key Directories
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **`src/pages/`**: File-based routing. Each `.astro` or `.md` file becomes a route.
+- **`src/content/blog/`**: Blog posts managed via Content Collections with type-safe frontmatter validation.
+- **`src/components/`**: Shared components like `Header`, `Footer`, `BaseHead`, and `FormattedDate`.
+- **`src/layouts/`**: Page templates, including `BlogPost.astro` for blog post rendering.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
+See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) for more information on content management.
 
 ## 🧞 Commands
 
@@ -36,10 +50,35 @@ All commands are run from the root of the project, from a terminal:
 | :------------------------- | :----------------------------------------------- |
 | `pnpm install`             | Installs dependencies                            |
 | `pnpm dev`                 | Starts local dev server at `localhost:4321`      |
+| `pnpm start`               | Alias for `pnpm dev`                             |
 | `pnpm build`               | Build your production site to `./dist/`          |
 | `pnpm preview`             | Preview your build locally, before deploying     |
 | `pnpm astro ...`           | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro --help`        | Get help using the Astro CLI                     |
+
+**Note for devcontainer users**: When running the dev server from inside the devcontainer, use `pnpm dev -- --host` to make the server accessible from your host machine's browser.
+
+## 📝 Content Management
+
+### Adding Blog Posts
+
+Create new blog posts in `src/content/blog/` as Markdown or MDX files. Each post requires frontmatter with the following schema (defined in [src/content/config.ts](src/content/config.ts)):
+
+```yaml
+---
+title: 'Your Post Title'
+description: 'A brief description of your post'
+pubDate: 2025-01-15
+updatedDate: 2025-01-16  # Optional
+heroImage: '/blog-placeholder.jpg'  # Optional
+---
+```
+
+Blog posts are automatically processed through the Content Collections API and rendered using the `BlogPost` layout via dynamic routing at `src/pages/blog/[...slug].astro`.
+
+### Site Configuration
+
+Update site-wide constants like `SITE_TITLE` and `SITE_DESCRIPTION` in [src/consts.ts](src/consts.ts).
 
 ## 🐳 Development Container
 
@@ -88,4 +127,4 @@ For more details, see the [Claude Code devcontainer documentation](https://docs.
 
 ## 👀 Want to learn more?
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Check out [Astro's documentation](https://docs.astro.build) or jump into the [Astro Discord server](https://astro.build/chat).
